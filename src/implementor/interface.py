@@ -1,5 +1,5 @@
 import dearpygui.dearpygui as dpg
-from index import create_cup
+from src.implementor.index import create_cup
 
 
 def paint_cup():
@@ -13,12 +13,12 @@ def paint_cup():
         dpg.add_image(tag='cup_image', texture_tag='cup_texture', parent='main_wind')
 
 
-def main():
+def start():
     dpg.create_context()
     dpg.create_viewport(title='Random Cup', width=530, height=600)
 
     with dpg.font_registry():
-        with dpg.font("./LiteralRegular.otf", 20, default_font=True, tag="rus_font") as f:
+        with dpg.font("LiteralRegular.otf", 20, default_font=True, tag="rus_font") as f:
             dpg.add_font_range_hint(dpg.mvFontRangeHint_Cyrillic)
 
     with dpg.window(tag='main_wind'):
@@ -35,4 +35,4 @@ def main():
     dpg.destroy_context()
 
 if __name__ == '__main__':
-    main()
+    start()
